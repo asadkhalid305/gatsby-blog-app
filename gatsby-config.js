@@ -3,8 +3,21 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `gatsby-testing`,
+    title: `Gatsby Testing Site`,
+    description: `Example project for learning Gatsby`,
+    twitterUsername: `@gatsbyjs`,
+    image: `/gatsby-icon.png`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp"],
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `blog`,
+        path: `${__dirname}/blog`,
+      },
+    },
+  ],
 };
